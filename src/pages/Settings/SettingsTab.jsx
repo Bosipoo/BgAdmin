@@ -6,41 +6,25 @@ import General from './General';
 import UserPermissions from './UserPermissions';
 import CompanyDetails from './CompanyDetails';
 import TeamInformation from './TeamInformation';
-
+import TabbedContainer from '../../components/reuse/TabbedContainer';
 
 
   
 
 function SettingsTab() {
 
-  const [value, setValue] = useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const tabs = [
+    { name: 'General', content: <General /> },
+    { name: 'User Permissions', content: <UserPermissions /> },
+    { name: 'Company Details', content: <CompanyDetails /> },
+    { name: 'Team Information', content: <TeamInformation /> },
+  ];
 
   return (
-    <Box display="flex" bgcolor="white" flex={1} flexGrow={1} ml="32px" borderRadius="20px" >
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-          style={{marginTop:40}} 
-        >
-
-        <Tab label="General" />
-        <Tab label="User Permissions" />
-        <Tab label="Company Details" />
-        <Tab label="Team Information" />
-      </Tabs>
-      <div style={{ padding: '10px', flexGrow: 1, }}>
-        {value === 0 && <General/>}
-        {value === 1 && <UserPermissions/>}
-        {value === 2 && <CompanyDetails/>}
-        {value === 3 && <TeamInformation/>}
-      </div>
-    </Box>
+    <div className="p-4">
+      <TabbedContainer tabs={tabs} />
+    </div>
   );
 }
 

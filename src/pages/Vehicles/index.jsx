@@ -6,7 +6,7 @@ import SmallCard from '../../components/reuse/SmallCard'
 import HeaderRow from '../../components/reuse/HeaderRow'
 import StatBox from '../../components/StatBox'
 import { Link } from 'react-router-dom'
-import { Car, TripsOutline, Drivers, TripsCompleted } from '../../assets'
+import { Car, TripsOutline, Drivers, TripsBlack } from '../../assets'
 
 
 const Vehicles = () => {
@@ -50,20 +50,24 @@ const Vehicles = () => {
         </div>
         <div className="mt-2 flex items-center">
           <div>
-            <div className="flex flex-row">
-              <div className="flex-grow p-1">
-                <SmallCard icon={TripsCompleted} number={"10"} text={"Trips Completed"} textSize={10.9} buttonText={"See all"} buttonUrl={"#"}/>
-              </div>
-              <div className="flex-grow p-1">
-              <SmallCard icon={TripsCompleted} number={"30"} text={"On-going Trips"} textSize={10.9} buttonText={"See all"} buttonUrl={"#"}/>
-              </div>
-              <div className="flex-grow p-1">
-              <SmallCard icon={TripsCompleted} number={"70"} text={"Scheduled Trips"} textSize={10.9} buttonText={"See all"} buttonUrl={"#"}/>
-              </div>
-              <div className="flex-grow p-1">
-                <SmallCard icon={Drivers} number={"50km"} text={"Avg Trip Distance"} textSize={10.9} />
-              </div>
+          <div className="flex flex-wrap">
+            <div className="flex-grow p-1 w-full md:w-1/2 lg:w-1/4">
+              <SmallCard icon={Drivers} number={"10"} text={"Total Vehicles"} textSize={10.9} buttonText={"See all"} buttonUrl={"#"} />
             </div>
+            <div className="flex-grow p-1 w-full md:w-1/2 lg:w-1/4">
+              <SmallCard icon={Drivers} number={"30"} text={"Saloon Cars"} textSize={10.9} buttonText={"See all"} buttonUrl={"#"} />
+            </div>
+            <div className="flex-grow p-1 w-full md:w-1/2 lg:w-1/4">
+              <SmallCard icon={Car} number={"70"} text={"SUVs"} textSize={10.9} buttonText={"See all"} buttonUrl={"#"} />
+            </div>
+            <div className="flex-grow p-1 w-full md:w-1/2 lg:w-1/4">
+              <SmallCard icon={Drivers} number={"50km"} text={"Minibus"} textSize={10.9} />
+            </div>
+            <div className="flex-grow p-1 w-full md:w-1/2 lg:w-1/4">
+              <SmallCard icon={Car} number={"50km"} text={"E-trikes"} textSize={10.9} />
+            </div>
+          </div>
+
           </div>
         </div>
       </div>

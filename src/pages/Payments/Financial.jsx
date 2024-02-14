@@ -1,72 +1,53 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
+import { SearchIcon } from '@heroicons/react/outline';
+import SmallCard from '../../components/reuse/SmallCard'
+import { Car, TripsOutline, WalletBlack, WalletYelow, WalletSelected, TripsBlack } from '../../assets'
 import { Card } from '../../assets'
 
 const Financial = () => {
-  const boxStyle = {
-            display:"grid",
-            border:2,
-            borderRadius:"10px",
-            py:"22px",
-            px:"40px",
-            mr:"0px",
-            borderColor:"#E0E0E0"
-          }
   return (
-    <Box ml={5} mt={2} mb={5}  >
-    <Box sx={boxStyle}  >
-    {/* GENERAL SETTINGS */}
-    <Typography variant="h7">Financial Report</Typography>
-    <Typography variant="h8" color="#9E9E9E">
-    Manage finances
-    </Typography>
-  </Box> 
-  <Box sx={[boxStyle,{mt:2, justifyContent:"space-between", alignItems:"center", display:"flex" }]}  >
-        
-        <Box sx={[boxStyle,{py:0.5, width:260, px:3} ]}>
-            <Typography textAlign="right" borderRadius={1} fontSize={8} padding={1} bgcolor="#F5F5F5" display="flex" justifySelf="flex-end" mb={1} >Today</Typography>
-            <Box display="flex" alignItems="center" >
-            <Box sx={{backgroundColor:"#FFE180", m:0, p:2, justifySelf:'center', borderRadius:20 }} alignItems="center" >
-            <img src={Card}  alt="" />
-            </Box>
-            <Box ml={2}>
-                <Typography variant='h7' fontWeight="bold" >20</Typography>
-                <Typography variant="h6" fontWeight="bold" color="#9E9E9E" >Total Payouts Made</Typography>
-            </Box>
-            </Box>
-            <Typography textAlign="left" borderRadius={1} fontSize={8} px={1} py={0.5} bgcolor="#ffffff" display="flex" justifySelf="flex-end" mt={1} border={1} mb={1} >See All</Typography>
-        </Box>
+    <div className="ml-5 mt-2 mb-5 space-y-2">
+      <div className='rounded-md border-2 border-gray-300 py-4 px-8'>
+        <div className="text-2xl font-semibold">Financial Report</div>
+        <p className="text-sm ml-1 text-gray-600">Manage Finances</p>
+      </div>
+      
+      <div className="flex space-x-8 overflow-x-auto border-2 rounded-md py-6 px-8 border-gray-300">
+        <div className="flex-none w-64">
+            <SmallCard
+                icon={WalletBlack}
+                number={20}  // Update with your actual data
+                text={`Total Revenue`}  // Update with your actual data
+                textSize={10.9}
+                buttonUrl={"#"}
+                withBorder={true}
+            />
+        </div>
 
-        <Box sx={[boxStyle,{py:0.5, width:260, px:3} ]}>
-            <Typography textAlign="right" borderRadius={1} fontSize={8} padding={1} bgcolor="#F5F5F5" display="flex" justifySelf="flex-end" mb={1} >Today</Typography>
-            <Box display="flex" alignItems="center" >
-            <Box sx={{backgroundColor:"#FFB4B4", m:0, p:2, justifySelf:'center', borderRadius:20 }} alignItems="center" >
-            <img src={Card}  alt="" />
-            </Box>
-            <Box ml={2}>
-                <Typography variant='h7' fontWeight="bold" >₦200,234</Typography>
-                <Typography variant="h6" fontWeight="bold" color="#9E9E9E" >Amount Paid Out</Typography>
-            </Box>
-            </Box>
-            <Typography textAlign="left" borderRadius={1} fontSize={8} px={1} py={0.5} bgcolor="#ffffff" display="flex" justifySelf="flex-end" mt={1} border={1} mb={1} >See All</Typography>
-        </Box>
+        <div className="flex-none w-64">
+            <SmallCard
+                icon={WalletYelow}
+                number={240000}  // Update with your actual data
+                text={`Total Payouts`}  // Update with your actual data
+                textSize={10.9}
+                buttonUrl={"#"}
+                withBorder={true}
+            />
+        </div>
 
-        <Box sx={[boxStyle,{py:0.5, width:260, px:3} ]}>
-            <Typography textAlign="right" borderRadius={1} fontSize={8} padding={1} bgcolor="#F5F5F5" display="flex" justifySelf="flex-end" mb={1} >Today</Typography>
-            <Box display="flex" alignItems="center" >
-            <Box sx={{backgroundColor:"#BDFFE3", m:0, p:2, justifySelf:'center', borderRadius:20 }} alignItems="center" >
-            <img src={Card}  alt="" />
-            </Box>
-            <Box ml={2}>
-                <Typography variant='h7' fontWeight="bold" >10</Typography>
-                <Typography variant="h6" fontWeight="bold" color="#9E9E9E" >Pending Payouts</Typography>
-            </Box>
-            </Box>
-            <Typography textAlign="left" borderRadius={1} fontSize={8} px={1} py={0.5} bgcolor="#ffffff" display="flex" justifySelf="flex-end" mt={1} border={1} mb={1} >See All</Typography>
-        </Box>
-
-        </Box>
-</Box>
+        <div className="flex-none w-64">
+            <SmallCard
+                icon={WalletSelected}
+                number={10}  // Update with your actual data
+                text={`Net Profit`}  // Update with your actual data
+                textSize={10.9}
+                buttonUrl={"#"}
+                withBorder={true}
+            />
+        </div>
+      </div>
+    </div>
   )
 }
 

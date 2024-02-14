@@ -114,9 +114,12 @@ const AdminSidebar = () => {
               </div>
             </li>
             <li className="mb-4">
-              <div className="flex items-center text-lg">
-                <img src={Settings} alt="Settings" className="mr-2 w-4 h-4" />
-                Settings
+
+              <div className="flex items-center">
+                <Link to="/settings" className="flex items-center text-lg text-black hover:text-gray-400">
+                  <img src={Settings} alt="Settings" className="mr-2 w-4 h-4" />
+                  Settings
+                </Link>
               </div>
             </li>
           </ul>

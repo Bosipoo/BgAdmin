@@ -8,6 +8,7 @@ import RiderList from "./pages/RiderPage/RiderList"
 import Trips from "./pages/Trips/index"
 import Vehicles from "./pages/Vehicles/index"
 import Payments from "./pages/Payments/index"
+import Settings from "./pages/Settings/index"
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Route path="/trips" element={<Trips />} />
       <Route path="/vehicles" element={<Vehicles />} />
       <Route path="/payments" element={<Payments />} />
+      <Route path="/settings" element={<Settings />} />
               
     </Routes>
 );

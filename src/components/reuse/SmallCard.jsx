@@ -16,7 +16,7 @@ import { Box, Typography} from '@mui/material'
 //     )
 // }
 
-const SmallCard = ({ topMargin = 0, icon, number, text, textSize= 13, buttonText, buttonUrl }) => {
+const SmallCard = ({ topMargin = 0, icon, number, text, textSize= 13, buttonText, buttonUrl, withBorder = false }) => {
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
@@ -27,7 +27,7 @@ const SmallCard = ({ topMargin = 0, icon, number, text, textSize= 13, buttonText
 
     return (
       <>
-        <div className='bg-white rounded flex flex-col justify-center' style={{ paddingLeft: '24px', paddingRight: '24px', paddingTop: '10px', paddingBottom: '10px', marginTop: `${topMargin}px`, width:'270px', height:'145px' }}>
+        <div className={`bg-white rounded ${withBorder ? 'border border-gray-300' : ''} flex flex-col justify-center`} style={{ paddingLeft: '24px', paddingRight: '24px', paddingTop: '10px', paddingBottom: '10px', marginTop: `${topMargin}px`, width: '270px', height: '145px' }}>
           <div className='flex items-center p-4'>
             <div className="self-center">
               <img src={icon} alt="" style={{height: '60px', width: '60px'}}/>

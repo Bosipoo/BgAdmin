@@ -18,11 +18,10 @@ function PaymentsTab() {
   // };
   const tabs = [
     { name: 'Transactions', content: <Transactions /> },
-    { name: 'Tab 2', content: <p>Content for Tab 2</p> },
-    { name: 'Tab 3', content: <p>Content for Tab 3</p> },
+    { name: 'Payouts', content: <Payout /> },
+    { name: 'Payout Settings', content: <PayoutSettings /> },
+    { name: 'Financial Reporting', content: <Financial /> },
   ];
-
-  // return (
   //   <Box display="flex" bgcolor="white" flex={1} flexGrow={1} ml="32px" borderRadius="20px" >
   //     <Tabs
   //       orientation="vertical"

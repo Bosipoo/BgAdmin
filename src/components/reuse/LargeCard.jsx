@@ -7,7 +7,7 @@ const LargeCard = ({balance}) => {
     const boxStyle = {
         display:"grid",
         py:"52px",
-        px:"40px"
+        px:"42px"
     };
 
   return (
@@ -32,5 +32,29 @@ const LargeCard = ({balance}) => {
     </Box>
   )
 }
+
+// const LargeCard = ({ balance }) => {
+//     return (
+//       <div className="bg-white grid py-52 px-10">
+//         <div className="grid place-items-center">
+//           <img src={WalletYelow} alt="" />
+//           <div className="mt-22">
+//             <p className="text-29 font-bold text-center">{balance}</p>
+//             <p className="text-12 font-bold text-center text-gray-500">AVAILABLE BALANCE</p>
+//           </div>
+//         </div>
+  
+//         <div className="mt-28 flex justify-between items-center">
+//           <div className="self-center mr-2 bg-yellow-400 px-40 py-13 rounded">
+//             <p className="text-13 font-bold">Withdraw</p>
+//           </div>
+  
+//           <div className="p-12 bg-black rounded self-center">
+//             <img src={WalletEye} alt="" />
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   };
 
 export default LargeCard

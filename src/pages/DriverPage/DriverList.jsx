@@ -1,34 +1,27 @@
 import React from 'react'
-import AdminSidebar from '../../components/AdminSidebar'
-import TopBar from '../../components/TopBar'
+import MainLayout from '../../components/reuse/MainLayout'
 import BackTopBar from '../../components/reuse/BackTopBar'
-import { Box } from '@mui/material'
-import SmallCard from '../../components/reuse/SmallCard'
 import ListHeaderRow from '../../components/reuse/ListHeaderRow'
-import { Referrals, Riders, TripsCompleted} from '../../assets'
 import DriverListTable from "../../components/DriverListTable"
 
 const DriverList = () => {
-  const boxStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  };
-
   return (
-    <div style={{ display: 'flex' }}>
-      <AdminSidebar />
-      {/* <div style={{ padding: '15px 25px 25px', width: 'calc(100% - 250px)' }}> */}
-      <div style={{ marginLeft: '250px', padding: '20px', flex: '1', width: 'calc(100vw - 250px)', marginBottom: '50px', height:'100%' }}>
+    <div>
+      <MainLayout>
+      <div className="ml-250px flex-1 w-full max-w-screen-xl mx-auto mb-50 h-screen" style={{ paddingLeft: '5rem', paddingRight: '5rem', paddingTop: '1rem' }}>
         <BackTopBar url="/driverDetails" />
-        <Box sx={[{ mt: 3, display: "flex"  }]}>
+        <div className="mt-3 flex">
           <ListHeaderRow />
-        </Box>       
-        <Box sx={[boxStyle, { mt: 0, alignItems: "center", display: "flex"  }]}>
-            <DriverListTable />
-        </Box>
-        
+        </div>
+        <div className="mt-0 flex items-center">
+          <div className="flex-1">
+            <div className="flex items-center">
+              <DriverListTable />
+            </div>
+          </div>
+        </div>
       </div>
+      </MainLayout>
     </div>
   )
 }

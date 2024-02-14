@@ -1,13 +1,13 @@
 import React from 'react'
-import AdminSidebar from '../../components/AdminSidebar'
 import TopBar from '../../components/TopBar'
-import { Box } from '@mui/material'
 import SmallCard from '../../components/reuse/SmallCard'
 import HeaderRow from '../../components/reuse/HeaderRow'
-import CreateForm from '../../components/CreateForm'
+import CreateRideForm from '../../components/CreateRideForm'
 import { Referrals, TripsCompleted} from '../../assets'
 import { useStore } from 'zustand'
 import { ModalStore } from '../../stores/ModalStores'
+import MainLayout from '../../components/reuse/MainLayout'
+
 
 const RidersPage = () => {
   const boxStyle = {
@@ -20,49 +20,48 @@ const RidersPage = () => {
   const handleOpen = () => setCreateRiderModal(true);
 
   return (
-    <div style={{ display: 'flex' }}>
-      <AdminSidebar />
-      {/* <div style={{ padding: '15px 25px 25px', width: 'calc(100% - 250px)' }}> */}
-      <div style={{ marginLeft: '250px', padding: '20px', flex: '1', width: 'calc(100vw - 250px)', marginBottom: '50px', height:'100vh' }}>
+    <div>
+      <MainLayout>
+      <div className="ml-250px flex-1 w-full max-w-screen-xl mx-auto mb-50 h-screen" style={{ paddingLeft: '5rem', paddingRight: '5rem', paddingTop: '1rem' }}>
         <TopBar />
-        <Box sx={[{ mt: 3, display: "flex"  }]}>
-          <HeaderRow linkText={"See Full List"} linkTo={"/driverList"} onClickCreate={handleOpen}/>
-        </Box>       
-        <Box sx={[boxStyle, { mt: 0, alignItems: "center", display: "flex"  }]}>
-        <div>
-          <Box display="flex" flexDirection="row">
-            <Box flexGrow={1} p={1}>
-              <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
-            </Box>
-            <Box flexGrow={1} p={1}>
-              <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
-            </Box>
-            <Box flexGrow={1} p={1}>
-              <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
-            </Box>
-            <Box flexGrow={1} p={1}>
-              <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
-            </Box>
-          </Box>
-          { createRiderModal && <CreateForm open={createRiderModal} />}
-          <Box display="flex" flexDirection="row">
-            <Box flexGrow={1} p={1}>
-              <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
-            </Box>
-            <Box flexGrow={1} p={1}>
-              <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
-            </Box>
-            <Box flexGrow={1} p={1}>
-              <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
-            </Box>
-            <Box flexGrow={1} p={1}>
-              <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
-            </Box>
-          </Box>
+        <div className="mt-3 flex">
+          <HeaderRow linkText={"See Full List"} linkTo={"/riderList"} ButtonText={"Create Rider Account"} onClickCreate={handleOpen} />
         </div>
-        </Box>
-        
+        <div className="mt-2 flex items-center">
+          <div>
+            <div className="flex flex-row">
+              <div className="flex-grow p-1">
+                <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
+              </div>
+              <div className="flex-grow p-1">
+                <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
+              </div>
+              <div className="flex-grow p-1">
+                <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
+              </div>
+              <div className="flex-grow p-1">
+                <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
+              </div>
+            </div>
+            {createRiderModal && <CreateRideForm open={createRiderModal} />}
+            <div className="flex flex-row">
+              <div className="flex-grow p-1">
+                <SmallCard icon={TripsCompleted} number={"4,665"} text={"Riders"} />
+              </div>
+              <div className="flex-grow p-1">
+                <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
+              </div>
+              <div className="flex-grow p-1">
+                <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
+              </div>
+              <div className="flex-grow p-1">
+                <SmallCard icon={Referrals} number={"4,665"} text={"Riders"} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      </MainLayout>
     </div>
   )
 }

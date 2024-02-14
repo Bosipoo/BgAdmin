@@ -4,6 +4,10 @@ import DriverPage from "./pages/DriverPage/Drivers"
 import DriverList from "./pages/DriverPage/DriverList" 
 import DriverDetails from "./pages/DriverPage/DriverDetails"
 import RiderPage from "./pages/RiderPage/Riders"
+import RiderList from "./pages/RiderPage/RiderList"
+import Trips from "./pages/Trips/index"
+import Vehicles from "./pages/Vehicles/index"
+import Payments from "./pages/Payments/index"
 
 function App() {
   return (
@@ -27,6 +31,10 @@ function App() {
       <Route path="/driverList" element={<DriverList />} />
       <Route path="/driverDetails" element={<DriverDetails />} />     
       <Route path="/riders" element={<RiderPage />} />
+      <Route path="/riderList" element={<RiderList />} />
+      <Route path="/trips" element={<Trips />} />
+      <Route path="/vehicles" element={<Vehicles />} />
+      <Route path="/payments" element={<Payments />} />
               
     </Routes>
 );

@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { Link } from 'react-router-dom';
 
-const HeaderRow = ({ linkText, linkTo, onClickCreate }) => {
+const HeaderRow = ({ linkText, linkTo, ButtonText, onClickCreate }) => {
   return (
 
 
@@ -21,7 +21,7 @@ const HeaderRow = ({ linkText, linkTo, onClickCreate }) => {
             </Button>
 
             <Button variant="outlined" onClick={onClickCreate} style={{ backgroundColor: 'black',color: 'white', borderColor: 'black', marginRight: '8px', height: '45px' }}>
-                Create Driver Account 
+                {ButtonText}    
                 <IconButton style={{ marginLeft: '4px' }} color="inherit">
                     <AddCircleIcon />
                 </IconButton>
